@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nimble Nixan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo {
+            width: 13%;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav {
+            font-family: 'Oswald', sans-serif;
+            background-color: #34383b;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .hero {
+            background-image: url("./bg.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Adjusted to place the image on the left and content on the right */
+            padding: 20px;
+            position: relative;
+        }
+
+        .glass {
+            width: 100%;
+            border-radius: 30px;
+            padding: 30px 20px;
+           
+            background: rgba(153, 150, 150, 0.09);
+            backdrop-filter: blur(5px);
+        }
+
+        .hero img {
+            max-width: 50%;
+            border-radius: 1000px;
+            margin-right: 20px;
+            width: 200px;
+            height: auto;
+            box-shadow: rgba(201, 201, 201, 0.499) 0px 5px 15px;
+        }
+
+        .hero-info {
+            flex: 1;
+        }
+
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            color: #F0EEED;
+        }
+
+        .hero h4 {
+            font-size: 18px;
+            color: #9BA4B5;
+        }
+
+        p {
+            font-size: 16px;
+            color: #EEEEEE;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .profile-image {
+            max-width: 100%;
+            height: auto;
+        }
+      
+
+        #project {
+            background-color: #000000;
+            padding: 30px 0;
+        }
+
+        .project-slider {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+        }
+
+        .project {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+            margin-right: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 0 0 auto;
+            padding: 20px;
+        }
+
+        .project h3 {
+            font-size: 24px;
+            color: #000000;
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        .project p {
+            font-size: 16px;
+            color: #777;
+            margin: 10px 0;
+        }
+        
+
+        .project a {
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .project a:hover {
+            background-color: #0056b3;
+        }
+
+
+        #contact {
+            background-color: #000000;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+            
+            
+        }
+
+        #contact h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #013f82;
+            
+        }
+
+        #contact p {
+            font-size: 18px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        #contact ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #contact li {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        #contact .container{
+            
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.884);
+            
+        }
+
+        #contact a {
+            color: #013f82;
+            text-decoration: none;
+        }
+
+        #contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="logo" href=""><p>The_morningstar</p></a>
+        <ul type="none" classname="items">
+            <a href="">Home</a>
+            <a href="">Projects</a>
+            <a>Contact</a>
+        </ul>
+    </div>
+
+    <section id="hero">
+        <div class="hero">
+            <div class="glass">
+                <img src="./profile.jpeg" alt="Hero Image" />
+                <div class="hero-info">
+                    <h2>Nimble Nixan</h2>
+                    <h4>Student | Engineer | Freelancer | Web Developer</h4>
+                    <p>
+                        "The optimist thinks this is the best of all possible worlds. <br>The pessimist fears it is true." 
+                        <br><br>-  J. Robert Oppenheimer
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="project">
+        <div class="project-slider" id="projectContainer">
+       </div>
+    </section>
+    <script>
+        // Sample project data in an array
+        const projects = [
+            {
+                name: "Project Title 1",
+                imageSrc: "project.jpg",
+                description: "Project Description 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                link: "#"
+            },
+            {
+                name: "Project Title 1",
+                imageSrc: "project.jpg",
+                description: "Project Description 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                link: "#"
+            },
+            {
+                name: "Project Title 1",
+                imageSrc: "project.jpg",
+                description: "Project Description 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                link: "#"
+            },
+           
+        
+            {
+                name: "Project Title 3",
+                imageSrc: "project.jpg",
+                description: "Project Description 3: Aenean in libero ac arcu eleifend luctus in et justo.",
+                link: "#"
+            }
+        ];
+
+        const projectContainer = document.getElementById("projectContainer");
+
+        // Loop through the projects and create project cards dynamically
+        projects.forEach((project, index) => {
+            const projectCard = document.createElement("div");
+            projectCard.className = "project";
+
+            projectCard.innerHTML = `
+                <h3>${project.name}</h3>
+                <img src="${project.imageSrc}" alt="${project.name} Image">
+                <p>${project.description}</p>
+                <a href="${project.link}">View Project</a>
+            `;
+
+            projectContainer.appendChild(projectCard);
+        });
+    </script>
+
+
+
+
+<section id="contact">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <p>
+            If you have any questions or would like to get in touch, feel free to reach out to me using the following methods:
+        </p>
+        <ul>
+            <li> <a href="mailto:nimble220727@sahrdaya.ac.in">nimble220727@sahrdaya.ac.in</a></li>
+            <li> <a href="https://www.linkedin.com/in/yourprofile/">Nimble Nixan</a></li>
+            <li><a href="https://github.com/yourusername">The_Morningstar</a></li>
+        </ul>
+    </div>
+</section>
+
+    
+</body>
+
+</html>
